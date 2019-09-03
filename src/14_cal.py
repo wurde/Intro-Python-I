@@ -22,3 +22,9 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+if len(sys.argv) == 1:
+  now = datetime.now()
+  print(calendar.month(now.year, now.month))
+else:
+  print('\n  Usage:\n    $ 14_cal.py month [year]\n')
