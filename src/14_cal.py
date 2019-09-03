@@ -23,8 +23,13 @@ import sys
 import calendar
 from datetime import datetime
 
+now = datetime.now()
+
 if len(sys.argv) == 1:
-  now = datetime.now()
   print(calendar.month(now.year, now.month))
+elif len(sys.argv) == 2:
+  print(calendar.month(now.year, int(sys.argv[1])))
+elif len(sys.argv) == 3:
+  print(calendar.month(int(sys.argv[2]), int(sys.argv[1])))
 else:
   print('\n  Usage:\n    $ 14_cal.py month [year]\n')
